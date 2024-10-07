@@ -2,12 +2,12 @@ import { promises } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const copy = async () => {
-    const __dirname = path.dirname(fileURLToPath(import.meta.url));
-    const copyFolderPath = path.join(__dirname, 'files_copy');
-    const curFolderPath = path.join(__dirname, 'files');
-    const errorText = 'FS operation failed';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const copyFolderPath = path.join(__dirname, 'files_copy');
+const curFolderPath = path.join(__dirname, 'files');
+const errorText = 'FS operation failed';
 
+const copy = async () => {
     try {
         await promises.access(copyFolderPath);
         throw new Error(errorText);

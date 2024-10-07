@@ -2,11 +2,11 @@ import { promises } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const create = async () => {
-    const __dirname = path.dirname(fileURLToPath(import.meta.url));
-    const folder = path.join(__dirname, 'files');
-    const file = path.join(folder, 'fresh.txt');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const folder = path.join(__dirname, 'files');
+const file = path.join(folder, 'fresh.txt');
 
+const create = async () => {
     try {
         await promises.access(file);
         throw new Error('FS operation failed');

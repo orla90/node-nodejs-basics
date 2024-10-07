@@ -2,12 +2,12 @@ import { promises } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const remove = async () => {
-    const __dirname = path.dirname(fileURLToPath(import.meta.url));
-    const folder = path.join(__dirname, 'files');
-    const file = path.join(folder, 'fileToRemove.txt');
-    const errorText = 'FS operation failed';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const folder = path.join(__dirname, 'files');
+const file = path.join(folder, 'fileToRemove.txt');
+const errorText = 'FS operation failed';
 
+const remove = async () => {
     try {
         await promises.access(file);
     } catch (error) {

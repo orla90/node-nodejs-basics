@@ -2,11 +2,11 @@ import { promises } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const list = async () => {
-    const __dirname = path.dirname(fileURLToPath(import.meta.url));
-    const folder = path.join(__dirname, 'files');
-    const errorText = 'FS operation failed';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const folder = path.join(__dirname, 'files');
+const errorText = 'FS operation failed';
 
+const list = async () => {
     try {
         await promises.access(folder);
     } catch (error) {

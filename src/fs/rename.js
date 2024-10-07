@@ -2,13 +2,13 @@ import { promises } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const rename = async () => {
-    const __dirname = path.dirname(fileURLToPath(import.meta.url));
-    const folder = path.join(__dirname, 'files');
-    const oldFile = path.join(folder, 'wrongFilename.txt');
-    const newFile = path.join(folder, 'properFilename.md');
-    const errorText = 'FS operation failed';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const folder = path.join(__dirname, 'files');
+const oldFile = path.join(folder, 'wrongFilename.txt');
+const newFile = path.join(folder, 'properFilename.md');
+const errorText = 'FS operation failed';
 
+const rename = async () => {
     try {
         await promises.access(oldFile);
     } catch (error) {

@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
-require('./files/c.js');
+import './files/c.js';
 
 const random = Math.random();
 
@@ -41,4 +41,3 @@ myServer.listen(PORT, () => {
 });
 
 export { unknownObject, myServer };
-
